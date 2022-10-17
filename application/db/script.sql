@@ -1,10 +1,10 @@
 CREATE TABLE Pasien
 (
     No_BPJS INT NOT NULL,
-    Nama INT NOT NULL,
-    Umur INT NOT NULL,
-    JK INT NOT NULL,
-    Diagnosa INT NOT NULL,
+    Nama varchar(200) NOT NULL,
+    Umur varchar(200) NOT NULL,
+    JK enum('L','P') NOT NULL,
+    Diagnosa varchar(200) NOT NULL,
     no_hp INT NOT NULL,
     PRIMARY KEY (No_BPJS)
 );
@@ -12,14 +12,14 @@ CREATE TABLE Pasien
 CREATE TABLE Faskes_1
 (
     ID_Faskes INT NOT NULL,
-    Lokasi INT NOT NULL,
+    Lokasi varchar(200) NOT NULL,
     PRIMARY KEY (ID_Faskes)
 );
 
 CREATE TABLE Rujukan
 (
     No_Rujukan INT NOT NULL,
-    Tgl_Rujukan INT NOT NULL,
+    Tgl_Rujukan date NOT NULL,
     No_BPJS INT NOT NULL,
     ID_Faskes INT NOT NULL,
     PRIMARY KEY (No_Rujukan),
@@ -30,7 +30,7 @@ CREATE TABLE Rujukan
 CREATE TABLE Rumah_Sakit
 (
     ID_RumahSakit INT NOT NULL,
-    NamaRS INT NOT NULL,
+    NamaRS varchar(200) NOT NULL,
     No_Rujukan INT NOT NULL,
     PRIMARY KEY (ID_RumahSakit),
     FOREIGN KEY (No_Rujukan) REFERENCES Rujukan(No_Rujukan)
@@ -39,8 +39,8 @@ CREATE TABLE Rumah_Sakit
 CREATE TABLE DokterRs
 (
     ID_Dokter INT NOT NULL,
-    Nama INT NOT NULL,
-    Spesialis INT NOT NULL,
+    Nama varchar(200) NOT NULL,
+    Spesialis varchar(200) NOT NULL,
     ID_RumahSakit INT NOT NULL,
     PRIMARY KEY (ID_Dokter),
     FOREIGN KEY (ID_RumahSakit) REFERENCES Rumah_Sakit(ID_RumahSakit)
