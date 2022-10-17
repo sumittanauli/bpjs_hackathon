@@ -5,6 +5,7 @@ CREATE TABLE Pasien
     Umur INT NOT NULL,
     JK INT NOT NULL,
     Diagnosa INT NOT NULL,
+    no_hp INT NOT NULL,
     PRIMARY KEY (No_BPJS)
 );
 
