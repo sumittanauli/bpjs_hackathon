@@ -20,16 +20,42 @@
 	<div class="row">
 		<div class="col-6">
 		<h4>Input Data</h4>
-
 			<form action="" method="post">
-				<label for="pasien_nama">Nama Pasien</label>
-				<select name="pasien_nama" id="pasien_nama">
-					<option value="test1">Valen</option>
-					<option value="test2">Mitta</option>
-					<option value="test3">Richie</option>
-				</select>
-				<label for=""></label>
-				<input type="text">
+			<div class="card">
+				<div class="card-header">Input Data</div>
+				<div class="card-body">
+
+
+						<label for="pasien_nama">Nama Pasien</label>
+						<select name="pasien_nama" id="pasien_nama" class="form-control">
+							<option selected disabled>Pilih Nama Pasien</option>
+							<option value="test1">Valen</option>
+							<option value="test2">Mitta</option>
+							<option value="test3">Richie</option>
+						</select>
+
+
+
+						<label for="rs_nama">Nama Rumah Sakit Tujuan</label>
+						<select name="rs_nama" id="rs_nama" class="form-control">
+							<option selected disabled>Pilih Faskes</option>
+							<option value="test1">Rs.A</option>
+							<option value="test2">Rs.B</option>
+							<option value="test3">Rs.C</option>
+						</select>
+
+
+						<label for="tgl_rujukan">Tanggal Rujukan</label>
+						<input type="date" class="form-control" id="tgl_rujukan" name="tgl_rujukan">
+
+
+
+				</div>
+				<div class="card-footer">
+					<button class="btn btn-primary">Generate</button>
+				</div>
+			</div>
+
 			</form>
 		</div>
 	</div>
