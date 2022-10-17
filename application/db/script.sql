@@ -1,10 +1,13 @@
+drop database bpjs;
+create database bpjs;
+use bpjs;
+
 CREATE TABLE Pasien
 (
     No_BPJS INT NOT NULL,
     Nama varchar(200) NOT NULL,
     Umur varchar(200) NOT NULL,
     JK enum('L','P') NOT NULL,
-    Diagnosa varchar(200) NOT NULL,
     no_hp INT NOT NULL,
     PRIMARY KEY (No_BPJS)
 );
@@ -22,6 +25,7 @@ CREATE TABLE Rujukan
     Tgl_Rujukan date NOT NULL,
     No_BPJS INT NOT NULL,
     ID_Faskes INT NOT NULL,
+	Diagnosa varchar(200) NOT NULL,
     PRIMARY KEY (No_Rujukan),
     FOREIGN KEY (No_BPJS) REFERENCES Pasien(No_BPJS),
     FOREIGN KEY (ID_Faskes) REFERENCES Faskes_1(ID_Faskes)
